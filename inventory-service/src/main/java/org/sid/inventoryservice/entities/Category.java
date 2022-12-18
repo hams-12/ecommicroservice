@@ -1,4 +1,4 @@
-package org.sid.inventoryservice.entites;
+package org.sid.inventoryservice.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
