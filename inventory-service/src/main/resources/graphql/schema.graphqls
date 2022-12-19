@@ -3,6 +3,16 @@ type Query{
     productById(id:String) : Product
 }
 
+type Mutation{
+    saveProduct(product:ProductRequest) : Product
+}
+
+input ProductRequest{
+    name : String,
+    price : Float,
+    quantity : Int
+}
+
 type Product{
     id : String,
     name : String,
