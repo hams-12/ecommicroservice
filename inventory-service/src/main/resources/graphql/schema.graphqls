@@ -1,5 +1,6 @@
 type Query{
-    productList : [Product]
+    productList : [Product],
+    productById(id:String) : Product
 }
 
 type Product{
@@ -7,4 +8,11 @@ type Product{
     name : String,
     price : Float,
     quantity : Int
+    category : Category
+}
+
+type Category {
+    id : Float,
+    name : String,
+    product : [Product]
 }
