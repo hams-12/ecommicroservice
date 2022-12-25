@@ -51,4 +51,20 @@ public class ProductGraphQLController {
         //product.setId(UUID.randomUUID().toString());
         return productRepository.save(productToSave);
     }
+
+    @MutationMapping
+    public Product updateProduct(@Argument String id, @Argument ProductRequestDTO product){
+
+        //Product productToUpdate = productRepository.findById(id).orElse(null);
+        Product productToUpdate = new Product();
+
+        Category category = categoryRepository.findById(product.categoryId()).orElse(null);
+        productToUpdate.setId(id);
+        productToUpdate.setName(product.name());
+        productToUpdate.setPrice(product.price());
+        productToUpdate.setQuantity(product.quantity());
+        productToUpdate.setCategory(category);
+
+        return productRepository.save(productToUpdate);
+    }
 }

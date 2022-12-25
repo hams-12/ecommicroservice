@@ -4,7 +4,8 @@ type Query{
 }
 
 type Mutation{
-    saveProduct(product:ProductRequestInput) : Product
+    saveProduct(product:ProductRequestInput) : Product,
+    updateProduct(id:String, product:ProductRequestInput) : Product
 }
 
 input ProductRequestInput{
