@@ -4,13 +4,14 @@ type Query{
 }
 
 type Mutation{
-    saveProduct(product:ProductRequest) : Product
+    saveProduct(product:ProductRequestInput) : Product
 }
 
-input ProductRequest{
+input ProductRequestInput{
     name : String,
     price : Float,
-    quantity : Int
+    quantity : Int,
+    categoryId : Float
 }
 
 type Product{
