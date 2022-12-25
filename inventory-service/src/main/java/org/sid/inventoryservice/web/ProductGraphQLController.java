@@ -51,7 +51,6 @@ public class ProductGraphQLController {
         //product.setId(UUID.randomUUID().toString());
         return productRepository.save(productToSave);
     }
-
     @MutationMapping
     public Product updateProduct(@Argument String id, @Argument ProductRequestDTO product){
 
@@ -66,5 +65,9 @@ public class ProductGraphQLController {
         productToUpdate.setCategory(category);
 
         return productRepository.save(productToUpdate);
+    }
+    @MutationMapping
+    public void removeProduct(@Argument String id){
+        productRepository.deleteById(id);
     }
 }

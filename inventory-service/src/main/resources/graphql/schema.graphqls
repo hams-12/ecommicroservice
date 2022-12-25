@@ -6,6 +6,7 @@ type Query{
 type Mutation{
     saveProduct(product:ProductRequestInput) : Product,
     updateProduct(id:String, product:ProductRequestInput) : Product
+    removeProduct(id:String): String
 }
 
 input ProductRequestInput{
