@@ -54,8 +54,8 @@ public class ProductGraphQLController {
     @MutationMapping
     public Product updateProduct(@Argument String id, @Argument ProductRequestDTO product){
 
-        //Product productToUpdate = productRepository.findById(id).orElse(null);
-        Product productToUpdate = new Product();
+        Product productToUpdate = productRepository.findById(id).orElse(null);
+        //Product productToUpdate = new Product();
 
         Category category = categoryRepository.findById(product.categoryId()).orElse(null);
         productToUpdate.setId(id);
